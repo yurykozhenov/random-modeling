@@ -1,7 +1,5 @@
 const math = require('mathjs');
 
-const utils = require('./utils');
-
 module.exports = function*(min, max, p, n) {
   const c = math.randomInt(0, p - 1);
   const a = math.randomInt(0, c - 1);
@@ -13,7 +11,7 @@ module.exports = function*(min, max, p, n) {
 
     x = (a * inverseX(x, p) + c) % p;
   }
-}
+};
 
 function inverseX(x, mod) {
   if (x === 0) {

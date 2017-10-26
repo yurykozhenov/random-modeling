@@ -13,7 +13,7 @@ module.exports = function*(min, max, m, n) {
 
     x = (a * x + c) % m;
   }
-}
+};
 
 function randomMultiplier(c, m) {
   let divisors = utils.findPrimeDivisors(m);

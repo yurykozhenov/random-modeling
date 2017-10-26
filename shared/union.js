@@ -1,7 +1,3 @@
-const math = require('mathjs');
-
-const utils = require('./utils');
-
 module.exports = function*(min, max, m, n, generator1, generator2) {
   const gen1 = generator1(min, max, m, n);
   const gen2 = generator2(min, max, m, n);
@@ -12,4 +8,4 @@ module.exports = function*(min, max, m, n, generator1, generator2) {
 
     yield (x - y) % m;
   }
-}
+};

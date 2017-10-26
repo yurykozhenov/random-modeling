@@ -1,5 +1,3 @@
-const math = require('mathjs');
-
 module.exports = function*(min, max, m, n) {
   let x1 = 0;
   let x2 = 1;
@@ -17,4 +15,4 @@ module.exports = function*(min, max, m, n) {
 
     yield x3;
   }
-}
+};

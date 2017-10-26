@@ -31,32 +31,30 @@ rl.question('Ваш вибір: ', (choice) => {
     const m = utils.randomPrime(min, max);
     const n = Number(quantity);
 
-    let generatedNumbers;
-
     if (Number(choice) === 5) {
-      rl.question('Виберіть перший генератор для метода об\'єднання: ', (choice1) => {
+      rl.question('Виберіть перший генератор для методу об\'єднання: ', (choice1) => {
         const generator1 = generators[Number(choice1) - 1];
 
-        rl.question('Виберіть другий генератор для метода об\'єднання: ', (choice2) => {
+        rl.question('Виберіть другий генератор для методу об\'єднання: ', (choice2) => {
           const generator2 = generators[Number(choice2) - 1];
 
-          generatedNumbers = Array.from(generator(min, max, m, n, generator1, generator2));
-          console.log('Цілі псевдо-випадкові числа (X):', generatedNumbers)
-          console.log('Дійсні псевдо-випадкові числа (U):', generatedNumbers.map(num => num / m));
+          const generatedNumbers = Array.from(generator(min, max, m, n, generator1, generator2));
+
+          for (let num of generatedNumbers) {
+            console.log(`${num} - ${(num / m).toFixed(2)}`);
+          }
 
           process.exit(0);
         });
       });
     } else {
-      generatedNumbers = Array.from(generator(min, max, m, n));
-      console.log('Цілі псевдо-випадкові числа (X):', generatedNumbers)
-      console.log('Дійсні псевдо-випадкові числа (U):', generatedNumbers.map(num => num / m));
+      const generatedNumbers = Array.from(generator(min, max, m, n));
+
+      for (let num of generatedNumbers) {
+        console.log(`${num} - ${(num / m).toFixed(2)}`);
+      }
 
       process.exit(0);
     }
   });
 });
-
-function showResult(generateNumbers) {
-
-}

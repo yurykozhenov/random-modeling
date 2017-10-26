@@ -13,7 +13,7 @@ module.exports = function*(min, max, m, n) {
 
     x = (d * Math.pow(x, 2) + a * x + c) % m;
   }
-}
+};
 
 function findCoefficients(c, m) {
   let divisors = utils.findPrimeOddDivisors(m);
@@ -35,7 +35,7 @@ function findCoefficients(c, m) {
   } else if (m % 2 === 0) {
     d = (a - 1) % 2;
   } else if (m % 3 === 0) {
-    excluded = 3 * c % 9;
+    const excluded = 3 * c % 9;
     divisors = divisors.filter(div => div != excluded);
   }
 
