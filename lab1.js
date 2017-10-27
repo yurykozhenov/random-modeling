@@ -19,6 +19,9 @@ const generators = [
   union
 ];
 
+const min = 100;
+const max = 110;
+
 const main = async(function() {
   console.log('Методи генерування рівномірно розподілених чисел');
   console.log('1 - Лінійний конгруентний метод');
@@ -34,8 +37,6 @@ const main = async(function() {
 
   const quantity = await(question('Введіть кількість псевдо-випадкових чисел: '));
 
-  const min = 100;
-  const max = 110;
   const m = utils.randomPrime(min, max);
   const n = Number(quantity);
 

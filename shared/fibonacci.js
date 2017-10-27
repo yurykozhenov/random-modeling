@@ -1,4 +1,8 @@
-module.exports = function*(min, max, m, n) {
+const utils = require('./utils');
+
+module.exports = function*(min, max, m, n = 1) {
+  m = m != null ? m : utils.randomPrime(min, max);
+
   let x1 = 0;
   let x2 = 1;
   let x3;

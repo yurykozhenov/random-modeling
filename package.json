@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "asyncawait": "^1.0.6",
+    "lodash": "^4.17.4",
     "mathjs": "^3.16.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0"
   }
 }

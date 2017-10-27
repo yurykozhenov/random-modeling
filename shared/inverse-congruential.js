@@ -1,6 +1,9 @@
 const math = require('mathjs');
 
-module.exports = function*(min, max, p, n) {
+const utils = require('./utils');
+module.exports = function*(min, max, p, n = 1) {
+  p = p != null ? p : utils.randomPrime(min, max);
+
   const c = math.randomInt(0, p - 1);
   const a = math.randomInt(0, c - 1);
 
