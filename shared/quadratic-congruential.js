@@ -2,7 +2,7 @@ const math = require('mathjs');
 
 const utils = require('./utils');
 
-module.exports = function*(min, max, m, n = 1) {
+module.exports = function*(min, max, m, n = Infinity) {
   m = m != null ? m : utils.randomPrime(min, max);
 
   const c = utils.randomPrime(0, m);

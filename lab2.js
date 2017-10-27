@@ -6,14 +6,13 @@ const _ = require('lodash');
 const question = require('./question');
 
 const utils = require('./shared/utils');
-
 const linearCongruential = require('./shared/linear-congruential');
 
 const min = 10;
 const max = 25;
 
 const m = utils.randomPrime(min, max);
-const generator = linearCongruential(min, max, m, Infinity);
+const generator = linearCongruential(min, max, m);
 
 class Point {
   constructor(x, y) {

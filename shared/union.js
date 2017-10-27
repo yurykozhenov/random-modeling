@@ -2,7 +2,7 @@ const utils = require('./utils');
 
 module.exports = function*(min, max, m, n, generator1, generator2) {
   m = m != null ? m : utils.randomPrime(min, max);
-  n = n != null ? n : 1;
+  n = n != null ? n : Infinity;
 
   const gen1 = generator1(min, max, m, n);
   const gen2 = generator2(min, max, m, n);
