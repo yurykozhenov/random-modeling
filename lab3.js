@@ -45,7 +45,7 @@ function emulateSystem(tau, t, time) {
 }
 
 function main() {
-  const tau = 0.4;
+  const tau = 1.4;
   const t = 1.6;
   const time = 30 + (5 % 4);
   const experimentsCount = 6;
@@ -69,6 +69,7 @@ function main() {
     totalWorkTime: 0,
   });
 
+  console.log('Середнє число вимог: ', Math.round(totalRequestsCount / experimentsCount));
   console.log('Середнє число вимог, що отримали обслуговування:', Math.round(totalSuccessCount / experimentsCount));
   console.log('Середній час обслуговування однієї вимоги:', (totalWorkTime / totalSuccessCount).toFixed(2));
   console.log('Ймовірність обслуговування:', (totalSuccessCount / totalRequestsCount).toFixed(2));
